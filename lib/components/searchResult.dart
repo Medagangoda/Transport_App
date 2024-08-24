@@ -12,7 +12,7 @@ class SearchResults extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Text(
           'No results found.',
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color: Color.fromARGB(255, 6, 64, 129), fontSize: 16),
         ),
       );
     }
@@ -20,10 +20,10 @@ class SearchResults extends StatelessWidget {
     return Column(
       children: results.map((result) {
         return Card(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-          color: Colors.transparent,
+          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          color: const Color(0xFF1E2C4C),
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(20.0),
             child: Row(
               children: [
                 Expanded(
@@ -40,7 +40,7 @@ class SearchResults extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: 40),
                           const Icon(Icons.train, color: Colors.white),
                           const SizedBox(width: 10),
                           Text(
@@ -62,7 +62,7 @@ class SearchResults extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const SizedBox(width: 10),
+                          const SizedBox(width: 40),
                           const Icon(Icons.train, color: Colors.white),
                           const SizedBox(width: 10),
                           Text(
@@ -83,7 +83,7 @@ class SearchResults extends StatelessWidget {
                       Text(
                         result['price'] ?? '',
                         style: const TextStyle(
-                          color: Colors.amber,
+                          color: Colors.red,
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
                         ),
@@ -91,12 +91,13 @@ class SearchResults extends StatelessWidget {
                     ],
                   ),
                 ),
-                IconButton(
-                  onPressed: () {
-                    // Implement navigation to detailed page or action
-                  },
-                  icon: const Icon(Icons.arrow_forward, color: Colors.amber),
-                ),
+                // Arrow Icon button
+                // IconButton(
+                //   onPressed: () {
+                    
+                //   },
+                //   icon: const Icon(Icons.arrow_forward, color: Colors.white),
+                // ),
               ],
             ),
           ),

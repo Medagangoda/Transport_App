@@ -9,7 +9,7 @@ class Newspalet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.transparent, // Semi-transparent background
+      color: Colors.white70, // Semi-transparent background
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
@@ -26,7 +26,7 @@ class Newspalet extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: Color.fromARGB(255, 247, 27, 27),
+                      color: Color(0xFF1E2A3A),
                     ),
                   ),
                   const SizedBox(height: 10),
@@ -34,7 +34,7 @@ class Newspalet extends StatelessWidget {
                     'mekata oni visathara tika bckground eken en vidihata loku hallak dapn',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ],

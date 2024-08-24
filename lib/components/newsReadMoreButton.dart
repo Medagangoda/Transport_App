@@ -38,11 +38,11 @@ class NewsReadMoreButton extends StatelessWidget {
         );
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.yellow,
+        backgroundColor: Color(0xFF1E2A3A),
       ),
       child: const Text(
         'Read More',
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(color: Colors.white),
       ),
     );
   }

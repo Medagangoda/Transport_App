@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screens/ContactScreen.dart'; 
+import '../screens/ContactScreen.dart';
 import '../screens/AboutusScreen.dart';
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -11,8 +11,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
-      elevation: 1,
+      backgroundColor: const Color(0xFF2C2E3A), // AppBar background color
+      elevation: 2,
       leading: Padding(
         padding: const EdgeInsets.only(left: 8.0),
         child: Row(
@@ -21,7 +21,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
             const Icon(
               Icons.directions_bus,
               size: 30,
-              color: Colors.amber,
+              color: Color(0xFF0A21C0), // Icon color
             ),
             const SizedBox(width: 5), // Space between the icon and text
             Text(
@@ -29,7 +29,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               style: const TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: Colors.white, // Text color
               ),
               overflow: TextOverflow.visible,
             ),
@@ -38,13 +38,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         PopupMenuButton<int>(
+          
           icon: const Icon(
             Icons.menu,
             color: Colors.white,
             size: 34,
           ),
           onSelected: (value) {
-            // menu item click
+            // Menu item click
             switch (value) {
               case 1:
                 print("Home clicked");
@@ -56,7 +57,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ContactScreen() ,
+                    builder: (context) => const ContactScreen(),
                   ),
                 );
                 break;
@@ -64,9 +65,9 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => AboutusScreen(),
+                    builder: (context) => const AboutusScreen(),
                   ),
-                  );
+                );
                 break;
             }
           },
@@ -75,7 +76,10 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               value: 1,
               child: Text(
                 "BUS.lk",
-                style: TextStyle(fontSize: 38, color: Color(0xFF0A21C0)),
+                style: TextStyle(
+                  fontSize: 38,
+                  color: Color(0xFF0A21C0), // Color for title
+                ),
               ),
               textStyle: TextStyle(fontSize: 18, color: Colors.yellow),
               padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 25),
@@ -90,7 +94,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
             ),
             PopupMenuItem(
               value: 2,
@@ -102,7 +107,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
             ),
             PopupMenuItem(
               value: 3,
@@ -114,7 +120,8 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
             ),
             PopupMenuItem(
               value: 4,
@@ -126,19 +133,20 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding: const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
+              padding:
+                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
             ),
           ],
-          color: const Color.fromARGB(255, 39, 38, 38),
-          elevation: 1,
+          color: Colors.white60, // Popup menu background color
+          elevation: 2,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10),
             side: const BorderSide(
-              color: Color.fromARGB(255, 29, 29, 29),
+              color: Colors.white60, // Border color
             ),
           ),
           constraints: const BoxConstraints(
-            minWidth: 150, // width of the popup menu
+            minWidth: 150, // Width of the popup menu
             maxWidth: 200,
           ),
         ),
