@@ -21,8 +21,8 @@ class ContactScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Contact Us'),
-        backgroundColor: const Color(0xFF2C2E3A), // AppBar color
+        title: const Text('Contact Emergency Situation'),
+        backgroundColor: Color.fromARGB(255, 167, 76, 88), // AppBar color
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),

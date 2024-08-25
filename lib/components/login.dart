@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xFF0A21C0),
+                color: const Color(0xFF1E2C4C),
               ),
             ),
             const SizedBox(height: 20),
@@ -53,7 +53,7 @@ class LoginScreen extends StatelessWidget {
                 // Add your login logic here
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF0A21C0),
+                backgroundColor: const Color(0xFF1E2C4C),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -64,6 +64,7 @@ class LoginScreen extends StatelessWidget {
                   'Log In',
                   style: TextStyle(
                     fontSize: 18,
+                    color: Colors.white,
                     fontWeight: FontWeight.bold,
                   ),
                 ),

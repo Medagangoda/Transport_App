@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/components/login.dart'; // Import the LoginScreen
+import 'package:flutter_application_1/components/login.dart'; 
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({Key? key}) : super(key: key);
@@ -10,57 +10,53 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color(0xFF2C2E3A), // AppBar background color
+      backgroundColor: Colors.white70,
       elevation: 2,
-      leading: Padding(
-        padding: const EdgeInsets.only(left: 8.0),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            const SizedBox(width: 5), // Space between the icon and text
-            Text(
-              'Bus.lk',
-              style: const TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                color: Colors.white, // Text color
-              ),
-              overflow: TextOverflow.visible,
-            ),
-          ],
+      title: const Text(
+        'Bus.lk',
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: Color(0xFF1E2C4C),
         ),
+        overflow: TextOverflow.ellipsis, 
       ),
       actions: [
+        IconButton(
+          icon: const Icon(
+            Icons.login,
+            size: 30,
+            color: Color(0xFF1E2C4C),
+          ),
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return const LoginScreen();
+              },
+            );
+          },
+        ),
         Padding(
           padding: const EdgeInsets.only(right: 15.0),
-          child: Row(
-            children: [
-              const Icon(
-                Icons.login,
-                size: 30,
-                color: Colors.white,
-              ),
-              const SizedBox(width: 5), // Space between the icon and text
-              GestureDetector(
-                onTap: () {
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return const LoginScreen(); // Show the LoginScreen as a pop-up
-                    },
-                  );
+          child: GestureDetector(
+            onTap: () {
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return const LoginScreen(); 
                 },
-                child: Text(
-                  'Log In',
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white, // Text color
-                  ),
-                  overflow: TextOverflow.visible,
-                ),
+              );
+            },
+            child: const Text(
+              'Log In',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF1E2C4C), 
               ),
-            ],
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
         ),
       ],
