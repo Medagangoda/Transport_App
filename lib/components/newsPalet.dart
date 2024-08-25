@@ -31,7 +31,7 @@ class Newspalet extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   Text(
-                    'mekata oni visathara tika bckground eken en vidihata loku hallak dapn',
+                    'mekata oni visathara tika background eken en vidihata loku hallak dapn',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screens/ContactScreen.dart';
-import '../screens/AboutusScreen.dart';
+import 'package:flutter_application_1/components/login.dart'; // Import the LoginScreen
 
 class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   const MyAppBar({Key? key}) : super(key: key);
@@ -18,11 +17,6 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const Icon(
-              Icons.directions_bus,
-              size: 30,
-              color: Color(0xFF0A21C0), // Icon color
-            ),
             const SizedBox(width: 5), // Space between the icon and text
             Text(
               'Bus.lk',
@@ -37,117 +31,36 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
       ),
       actions: [
-        PopupMenuButton<int>(
-          
-          icon: const Icon(
-            Icons.menu,
-            color: Colors.white,
-            size: 34,
-          ),
-          onSelected: (value) {
-            // Menu item click
-            switch (value) {
-              case 1:
-                print("Home clicked");
-                break;
-              case 2:
-                print("Booking clicked");
-                break;
-              case 3:
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ContactScreen(),
+        Padding(
+          padding: const EdgeInsets.only(right: 15.0),
+          child: Row(
+            children: [
+              const Icon(
+                Icons.login,
+                size: 30,
+                color: Colors.white,
+              ),
+              const SizedBox(width: 5), // Space between the icon and text
+              GestureDetector(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return const LoginScreen(); // Show the LoginScreen as a pop-up
+                    },
+                  );
+                },
+                child: Text(
+                  'Log In',
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white, // Text color
                   ),
-                );
-                break;
-              case 4:
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AboutusScreen(),
-                  ),
-                );
-                break;
-            }
-          },
-          itemBuilder: (context) => [
-            const PopupMenuItem(
-              value: 1,
-              child: Text(
-                "BUS.lk",
-                style: TextStyle(
-                  fontSize: 38,
-                  color: Color(0xFF0A21C0), // Color for title
+                  overflow: TextOverflow.visible,
                 ),
               ),
-              textStyle: TextStyle(fontSize: 18, color: Colors.yellow),
-              padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 25),
-            ),
-            PopupMenuItem(
-              value: 1,
-              child: ListTile(
-                leading: const Icon(Icons.home, color: Colors.white),
-                title: const Text(
-                  "Home",
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-              ),
-              textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
-            ),
-            PopupMenuItem(
-              value: 2,
-              child: ListTile(
-                leading: const Icon(Icons.book, color: Colors.white),
-                title: const Text(
-                  "Booking",
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-              ),
-              textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
-            ),
-            PopupMenuItem(
-              value: 3,
-              child: ListTile(
-                leading: const Icon(Icons.contact_mail, color: Colors.white),
-                title: const Text(
-                  "Contact",
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-              ),
-              textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
-            ),
-            PopupMenuItem(
-              value: 4,
-              child: ListTile(
-                leading: const Icon(Icons.info, color: Colors.white),
-                title: const Text(
-                  "About Us",
-                  style: TextStyle(fontSize: 22, color: Colors.white),
-                ),
-              ),
-              textStyle: const TextStyle(fontSize: 18, color: Colors.yellow),
-              padding:
-                  const EdgeInsets.symmetric(vertical: 5.0, horizontal: 20),
-            ),
-          ],
-          color: Colors.white60, // Popup menu background color
-          elevation: 2,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: const BorderSide(
-              color: Colors.white60, // Border color
-            ),
-          ),
-          constraints: const BoxConstraints(
-            minWidth: 150, // Width of the popup menu
-            maxWidth: 200,
+            ],
           ),
         ),
       ],
