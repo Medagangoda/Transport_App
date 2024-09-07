@@ -44,7 +44,7 @@ class _FilterCardState extends State<FilterCard> {
         'time2': '12:00',
         'destination1': 'Makubura',
         'destination2': 'Galle',
-        'details': 'Sampath Trasport Service',
+        'details': 'Waduge Trasport Service',
         'price': 'Rs. 1550.00',
       },
       {
@@ -75,17 +75,17 @@ class _FilterCardState extends State<FilterCard> {
         'time1': '13:00',
         'time2': '14:00',
         'destination1': 'Makubura',
-        'destination2': 'Mathara',
+        'destination2': 'ELpitiya',
         'details': 'Vimukthi Express',
-        'price': 'Rs.1800.00',
+        'price': 'Rs.800.00',
       },
       {
         'time1': '13:00',
         'time2': '14:00',
-        'destination1': 'Mathara',
+        'destination1': 'Elpitiya',
         'destination2': 'Makubura',
         'details': 'Vimukthi Express',
-        'price': 'Rs.1800.00',
+        'price': 'Rs.800.00',
       },
       {
         'time1': '10:00',
@@ -140,7 +140,6 @@ class _FilterCardState extends State<FilterCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
                 // From
                 Row(
                   children: [
@@ -159,13 +158,12 @@ class _FilterCardState extends State<FilterCard> {
                           Container(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF1E2C4C)
-                                  .withOpacity(0.8),
+                              color: const Color(0xFF1E2C4C).withOpacity(0.8),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: DropdownButtonFormField<String>(
-                              decoration: const InputDecoration.collapsed(
-                                  hintText: ''),
+                              decoration:
+                                  const InputDecoration.collapsed(hintText: ''),
                               value: _fromLocation,
                               items: [
                                 'Makubura',
@@ -180,7 +178,8 @@ class _FilterCardState extends State<FilterCard> {
                                   value: value,
                                   child: Text(
                                     value,
-                                    style: const TextStyle(color: Color(0xFFFFFFFF)),
+                                    style: const TextStyle(
+                                        color: Color(0xFFFFFFFF)),
                                   ),
                                 );
                               }).toList(),
@@ -218,8 +217,8 @@ class _FilterCardState extends State<FilterCard> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: DropdownButtonFormField<String>(
-                              decoration: const InputDecoration.collapsed(
-                                  hintText: ''),
+                              decoration:
+                                  const InputDecoration.collapsed(hintText: ''),
                               value: _toLocation,
                               items: [
                                 'Makubura',
@@ -278,8 +277,8 @@ class _FilterCardState extends State<FilterCard> {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12.0),
-                                border: Border.all(
-                                    color: const Color(0xFFe0e0e0)),
+                                border:
+                                    Border.all(color: const Color(0xFFe0e0e0)),
                               ),
                               child: Row(
                                 children: [
@@ -321,8 +320,8 @@ class _FilterCardState extends State<FilterCard> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12.0),
-                              border: Border.all(
-                                  color: const Color(0xFFe0e0e0)),
+                              border:
+                                  Border.all(color: const Color(0xFFe0e0e0)),
                             ),
                             child: Row(
                               children: [
