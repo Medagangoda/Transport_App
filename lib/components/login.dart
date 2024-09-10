@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/components/register.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -15,12 +16,13 @@ class LoginScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Text(
+            // Login title
+            const Text(
               'Log In',
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xFF1E2C4C),
+                color: Color(0xFF1E2C4C),
               ),
             ),
             const SizedBox(height: 20),
@@ -28,7 +30,9 @@ class LoginScreen extends StatelessWidget {
             TextField(
               decoration: InputDecoration(
                 labelText: 'Username',
-                labelStyle: TextStyle(color: Colors.grey[700]),
+                labelStyle: TextStyle(
+                  color: Colors.grey[700],
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -40,7 +44,9 @@ class LoginScreen extends StatelessWidget {
               obscureText: true,
               decoration: InputDecoration(
                 labelText: 'Password',
-                labelStyle: TextStyle(color: Colors.grey[700]),
+                labelStyle: TextStyle(
+                  color: Colors.grey[700],
+                ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
@@ -50,25 +56,78 @@ class LoginScreen extends StatelessWidget {
             // Log In Button
             ElevatedButton(
               onPressed: () {
-                // Add your login logic here
+                // Add the login functionality here
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: const Color(0xFF1E2C4C),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
                 ),
-              ),
-              child: const Padding(
-                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                child: Text(
-                  'Log In',
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 12.0,
+                  horizontal: 30.0,
                 ),
               ),
+              child: const Text(
+                'Log In',
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const SizedBox(height: 20),
+            
+            Row(
+              children: [
+                Expanded(
+                  child: Divider(
+                    color: Colors.grey[400],
+                    thickness: 1,
+                  ),
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: Text(
+                    'or',
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                ),
+                Expanded(
+                  child: Divider(
+                    color: Colors.grey[400],
+                    thickness: 1,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 20),
+            // Don't have an account? Sign up section
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const Text(
+                  "Don't have an account? ",
+                  style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (_) => RegisterScreen()));
+                  },
+                  child: const Text(
+                    'Sign up',
+                    style: TextStyle(
+                      color: Color(0xFF00258B),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
             ),
           ],
         ),

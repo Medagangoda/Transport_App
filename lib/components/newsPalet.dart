@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 import 'newsReadMoreButton.dart';
 
@@ -9,7 +7,7 @@ class Newspalet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      color: Colors.white70, // Semi-transparent background
+      color: Colors.white70, 
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15.0),
       ),
@@ -20,18 +18,18 @@ class Newspalet extends StatelessWidget {
           children: [
             Expanded(
               child: ListView(
-                children: [
+                children: const [
                   Text(
-                    'BUS.LK news card input this news',
+                    'BUS.LK news card ',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Color(0xFF1E2A3A),
                     ),
                   ),
-                  const SizedBox(height: 10),
+                  SizedBox(height: 10),
                   Text(
-                    'mekata oni visathara tika background eken en vidihata loku hallak dapn',
+                    'This period shows the information about the full details of the news received by our Bus. lk application, which includes a detailed introduction of the news and other details. It should be noted that it is a fully responsible news.',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -40,11 +38,11 @@ class Newspalet extends StatelessWidget {
                 ],
               ),
             ),
-            Align(
+            const Align(
               alignment: Alignment.bottomRight,
               child: NewsReadMoreButton(
-                newsTitle: 'Breaking News: Flutter 3.0 Released!',
-                newsContent: 'Flutter 3.0 has been released with amazing new features and improvements, including...'
+                newsTitle: 'Breaking News: ',
+                newsContent: 'This period shows the information about the full details of the news received by our Busda lk application, which includes a detailed introduction of the news and other details. It should be noted that it is a fully responsible news.'
               ),
             ),
           ],

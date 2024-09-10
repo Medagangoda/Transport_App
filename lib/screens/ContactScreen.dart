@@ -4,7 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 class ContactScreen extends StatelessWidget {
   const ContactScreen({Key? key}) : super(key: key);
 
-  // Function to launch the phone dialer with the given number
+  
   void _launchCaller(String number) async {
     final Uri launchUri = Uri(
       scheme: 'tel',
@@ -22,7 +22,7 @@ class ContactScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Contact Emergency Situation'),
-        backgroundColor: Color.fromARGB(255, 167, 76, 88), // AppBar color
+        backgroundColor: Color.fromARGB(255, 167, 76, 88), 
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),

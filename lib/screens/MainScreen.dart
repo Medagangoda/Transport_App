@@ -17,10 +17,10 @@ class _MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
 
   static const List<Widget> _screens = <Widget>[
-    MainContent(), // The Main Screen content
-    BookingScreen(), //  Booking screen
-    ContactScreen(), // Contact screen
-    NotificationScreen(), // About Us screen
+    MainContent(), 
+    BookingScreen(), 
+    ContactScreen(), 
+    NotificationScreen(), 
   ];
 
   void _onItemTapped(int index) {
@@ -41,7 +41,7 @@ class _MainScreenState extends State<MainScreen> {
         children: [
           // Background with light blue color
           Container(
-            color: const Color(0xFFE6F3FF), // Light blue background
+            color: const Color(0xFFE6F3FF), 
           ),
           // Dark blue circular shape
           Positioned(
@@ -51,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
             child: Container(
               height: screenSize.height * 0.6,
               decoration: BoxDecoration(
-                color: const Color(0xFF1E2A3A), // Dark blue color
+                color: const Color(0xFF1E2A3A), 
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(screenSize.width * 0.5),
                   bottomRight: Radius.circular(screenSize.width * 0.5),
@@ -59,7 +59,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
           ),
-          // Display the selected screen from the BottomNavigationBar
+          
           _screens[_selectedIndex],
         ],
       ),
@@ -107,20 +107,23 @@ class MainContent extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          // Newspalet Component
+
+          // Newspalet 
           Container(
             margin: const EdgeInsets.symmetric(horizontal: 22.0),
             height: screenSize.height / 3,
             child: const Newspalet(),
           ),
-          const SizedBox(height: 5),
-          // FilterCard Component
+          const SizedBox(height: 32),
+
+
+          // FilterCard 
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 8.0),
             child: FilterCard(),
           ),
           const SizedBox(height: 20),
-          // Add more widgets below if needed
+          
         ],
       ),
     );

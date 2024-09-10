@@ -140,8 +140,6 @@ class _FilterCardState extends State<FilterCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-
-                // From
                 Row(
                   children: [
                     Expanded(
@@ -159,13 +157,12 @@ class _FilterCardState extends State<FilterCard> {
                           Container(
                             padding: const EdgeInsets.symmetric(vertical: 8.0),
                             decoration: BoxDecoration(
-                              color: const Color(0xFF1E2C4C)
-                                  .withOpacity(0.8),
+                              color: const Color(0xFF1E2C4C).withOpacity(0.8),
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: DropdownButtonFormField<String>(
-                              decoration: const InputDecoration.collapsed(
-                                  hintText: ''),
+                              decoration:
+                                  const InputDecoration.collapsed(hintText: ''),
                               value: _fromLocation,
                               items: [
                                 'Makubura',
@@ -174,15 +171,19 @@ class _FilterCardState extends State<FilterCard> {
                                 'Galle',
                                 'Ebilipitiya',
                                 'Anuradhapuraya',
-                                'kaluthara'
+                                'kaluthara',
+                                'petta'
                               ].map((String value) {
                                 return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(
-                                    value,
-                                    style: const TextStyle(color: Color(0xFFFFFFFF)),
-                                  ),
-                                );
+                                    value: value,
+                                    child: Center(
+                                      child: Text(
+                                        value,
+                                        style: const TextStyle(
+                                            color: Color(0xFFFFFFFF),
+                                            wordSpacing: 20),
+                                      ),
+                                    ));
                               }).toList(),
                               onChanged: (value) {
                                 setState(() {
@@ -218,8 +219,8 @@ class _FilterCardState extends State<FilterCard> {
                               borderRadius: BorderRadius.circular(8.0),
                             ),
                             child: DropdownButtonFormField<String>(
-                              decoration: const InputDecoration.collapsed(
-                                  hintText: ''),
+                              decoration:
+                                  const InputDecoration.collapsed(hintText: ''),
                               value: _toLocation,
                               items: [
                                 'Makubura',
@@ -231,12 +232,14 @@ class _FilterCardState extends State<FilterCard> {
                                 'kaluthara'
                               ].map((String value) {
                                 return DropdownMenuItem<String>(
-                                  value: value,
-                                  child: Text(
-                                    value,
-                                    style: const TextStyle(color: Colors.white),
-                                  ),
-                                );
+                                    value: value,
+                                    child: Center(
+                                      child: Text(
+                                        value,
+                                        style: const TextStyle(
+                                            color: Colors.white),
+                                      ),
+                                    ));
                               }).toList(),
                               onChanged: (value) {
                                 setState(() {
@@ -278,8 +281,8 @@ class _FilterCardState extends State<FilterCard> {
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(12.0),
-                                border: Border.all(
-                                    color: const Color(0xFFe0e0e0)),
+                                border:
+                                    Border.all(color: const Color(0xFFe0e0e0)),
                               ),
                               child: Row(
                                 children: [
@@ -321,8 +324,8 @@ class _FilterCardState extends State<FilterCard> {
                             decoration: BoxDecoration(
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(12.0),
-                              border: Border.all(
-                                  color: const Color(0xFFe0e0e0)),
+                              border:
+                                  Border.all(color: const Color(0xFFe0e0e0)),
                             ),
                             child: Row(
                               children: [
