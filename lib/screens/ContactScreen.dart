@@ -57,7 +57,7 @@ class ContactScreen extends StatelessWidget {
           // Fire Service Card
           _buildContactCard(
             context: context,
-            title: 'ශ්‍රී ලන්කා ගිනිනිවීමේ සේවය',
+            title: 'ශ්‍රී ලංකා ගිනිනිවීමේ සේවය',
             number: '110',
             description: 'Call for fire emergencies and rescue services.',
             icon: Icons.fire_extinguisher,
